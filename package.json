@@ -1,0 +1,42 @@
+{
+  "name": "iroutetemplate",
+  "version": "1.0.0",
+  "description": "Template para ionic que cumple con la arquitectura Onion",
+  "main": "index.js",
+  "bin": {
+    "create-project": "bin/create-project"
+  },
+  "scripts": {
+    "test": "create-template"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/israeldavid/ionicTemplateCA.git"
+  },
+  "keywords": [
+    "onion",
+    "arquitectura",
+    "template",
+    "ionic"
+  ],
+  "author": "David Ortega Mazzini",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^16.36.0",
+    "arg": "^4.1.2",
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "commander": "^4.1.0",
+    "configstore": "^5.0.0",
+    "esm": "^3.2.25",
+    "figlet": "^1.2.4",
+    "git-clone": "^0.1.0",
+    "inquirer": "^7.0.3",
+    "lodash": "^4.17.15",
+    "minimist": "^1.2.0",
+    "shelljs": "^0.8.3",
+    "simple-git": "^1.129.0",
+    "touch": "^3.1.0"
+  }
+}
