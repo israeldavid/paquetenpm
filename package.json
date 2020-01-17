@@ -4,7 +4,7 @@
   "description": "Template para ionic que cumple con la arquitectura Onion",
   "main": "index.js",
   "bin": {
-    "create-template": "bin/create-project"
+    "create-iroute": "bin/create-iroute"
   },
   "repository": {
     "type": "git",
