@@ -18,7 +18,7 @@ export function run() {
     name:'template',
     type:'input',
     message:'Ingrese el nombre del template?',
-    default:"pharmacys",
+    default:"difareapp",
     validate: function( value ) {
       if (value.length) {
         return true;
