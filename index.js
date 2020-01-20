@@ -2,8 +2,9 @@ const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
 const fs = require('fs');
-const inquirer  = require('inquirer');
+const inquirer = require('inquirer');
 const clone = require('git-clone');
+const cp = require('child_process');
 
 clear();
 
@@ -15,11 +16,11 @@ console.log(
 
 export function run() {
   inquirer.prompt({
-    name:'template',
-    type:'input',
-    message:'Ingrese el nombre del template?',
-    default:"difareapp",
-    validate: function( value ) {
+    name: 'template',
+    type: 'input',
+    message: 'Ingrese el nombre del template?',
+    default: "difareapp",
+    validate: function (value) {
       if (value.length) {
         return true;
       } else {
@@ -27,13 +28,23 @@ export function run() {
       }
     }
   })
-  .then(nombrePlantilla => {
-    fs.mkdirSync(nombrePlantilla.template); 
-    clone('https://github.com/israeldavid/ionicTemplateCA.git', nombrePlantilla.template);
-  console.log("Plantilla Creada");
-  console.log("Ingrese al directorio:" + nombrePlantilla.template)
-  console.log("y ejecute el comando Ionic Serve");
-  })
-} 
+    .then(nombrePlantilla => {
+      if (fs.existsSync(nombrePlantilla.template)) {
+        console.log("Error ya tiene un dicrectorio con ese nombre");
+        return true;
+      } else {
+        fs.mkdirSync(nombrePlantilla.template);
+        clone('https://github.com/israeldavid/ionicTemplateCA.git', nombrePlantilla.template);
+        console.log("Plantilla Creada");
+        let nombredir = nombrePlantilla.template;
+        console.log("Espere por favor... Se instalan dependencias");
+        process.chdir(`/${nombredir}`);
+        cp.execSync(`npm install`);
+        console.log("Ingrese al directorio: " + nombrePlantilla.template);
+        console.log("ejecute el comando ionic serve");
+
+      }
+    })
+}
 
 
