@@ -6,9 +6,6 @@
   "bin": {
     "irouteapptemplatecreate": "bin/irouteapptemplatecreate"
   },
-  "scripts": {
-    "install": "node ./install"
-    },
   "repository": {
     "type": "git",
     "url": "https://dev.azure.com/iRouteSolutions/DifareArquitecturaCore/coreapp/frontend"
@@ -25,19 +22,17 @@
     "@octokit/rest": "^16.36.0",
     "arg": "^4.1.2",
     "chalk": "^3.0.0",
-    "child_process": "^1.0.2",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
     "commander": "^4.1.0",
     "configstore": "^5.0.0",
-    "cwd": "^0.10.0",
     "esm": "^3.2.25",
     "figlet": "^1.2.4",
     "git-clone": "^0.1.0",
     "inquirer": "^7.0.3",
+    "loading-spinner": "^1.2.1",
     "lodash": "^4.17.15",
     "minimist": "^1.2.0",
-    "path": "^0.12.7",
     "shelljs": "^0.8.3",
     "simple-git": "^1.129.0",
     "touch": "^3.1.0"
