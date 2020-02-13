@@ -1,4 +1,5 @@
 import { rejects } from 'assert';
+import { resolve } from 'dns';
 
 const chalk = require('chalk');
 const clear = require('clear');
@@ -32,9 +33,10 @@ async function cargando(name) {
 async function clonarPlantilla(nombreP) {
   return new Promise(resultado =>{
     
-      console.log("Clonando...",loadingSpinner.start(100, {
+      console.log("Clonando...")
+      loadingSpinner.start(100, {
         clearChar: true
-      }));
+      });
       //clone('https://iRouteSolutions@dev.azure.com/iRouteSolutions/DifareArquitecturaCore/_git/DifareArquitecturaCore', nombreP.template);
       clone('https://github.com/israeldavid/ionicTemplateCA.git', nombreP.template,"",function(err) {
         loadingSpinner.stop();
@@ -59,6 +61,7 @@ async function instalarDependencias(nombre) {
     process.chdir(`${nombredir}`);
     cp.execSync(`npm install`);
     process.stdout.write('Todo Listo!!! \n');
+    return resolve();
   });
 }
 
