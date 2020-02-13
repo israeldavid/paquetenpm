@@ -38,7 +38,8 @@ async function clonarPlantilla(nombreP) {
         clearChar: true
       });
       //clone('https://iRouteSolutions@dev.azure.com/iRouteSolutions/DifareArquitecturaCore/_git/DifareArquitecturaCore', nombreP.template);
-      clone('https://github.com/israeldavid/ionicTemplateCA.git', nombreP.template,"",function(err) {
+      clone('https://iRouteSolutions@dev.azure.com/iRouteSolutions/TemplateCAI/_git/TemplateCAI', nombreP.template,"",function(err) {
+      //clone('https://github.com/israeldavid/ionicTemplateCA.git', nombreP.template,"",function(err) {
         loadingSpinner.stop();
       if (!err)  {
           console.log("Instalando Dependencias");
